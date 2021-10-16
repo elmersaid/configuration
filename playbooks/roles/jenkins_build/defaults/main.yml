@@ -160,7 +160,7 @@ build_jenkins_plugins_list:
     version: '1.21'
     group: 'org.jenkins-ci.plugins'
   - name: 'jackson2-api'
-    version: '2.13.1'
+    version: '2.12.1'
     group: 'org.jenkins-ci.plugins'
   - name: 'javadoc'
     version: '1.3'
