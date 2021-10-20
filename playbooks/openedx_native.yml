@@ -17,7 +17,7 @@
         "{{ MFE_BASE }}",
     ]
     EDXAPP_CORS_ORIGIN_WHITELIST: [
-      "{{ MFE_BASE }}",
+      "http://{{ MFE_BASE }}",
     ]
 
     EDXAPP_CSRF_TRUSTED_ORIGINS: [
