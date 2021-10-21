@@ -188,14 +188,6 @@
     chdir: "{{ hadoop_common_temporary_dir }}"
   when: not native_libs_built.stat.exists
 
-- name: old native libs renamed
-  shell: "mv {{ HADOOP_COMMON_HOME }}/lib/native/{{ item.name }} {{ HADOOP_COMMON_HOME }}/lib/native/{{ item.new_name }}"
-  with_items:
-    - { name: libhadoop.a, new_name: libhadoop32.a }
-    - { name: libhadoop.so, new_name: libhadoop32.so }
-    - { name: libhadoop.so.1.0.0, new_name: libhadoop32.so.1.0.0 }
-  when: not native_libs_built.stat.exists
-
 - name: native lib marker touched
   file:
     path: "{{ HADOOP_COMMON_USER_HOME }}/.native_libs_built"
