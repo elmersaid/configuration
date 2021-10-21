@@ -133,13 +133,7 @@
     - install
     - install:configuration
 
-- name: enable Hadoop services
-  service:
-    name: "{{ hadoop_common_services }}"
-    enabled: yes
-  tags:
-    - install
-    - install:configuration
+
 
 - name: start Hadoop services
   service:
