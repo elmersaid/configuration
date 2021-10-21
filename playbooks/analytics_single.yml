@@ -26,7 +26,7 @@
     POSTFIX_QUEUE_EXTERNAL_SMTP_HOST: ''
   roles:
     - role: aws
-      when: COMMON_ENABLE_AWS_ROLE
+      when: false
     - role: edxlocal
       when: EDXAPP_MYSQL_HOST == 'localhost'
     - role: memcache
