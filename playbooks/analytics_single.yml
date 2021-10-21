@@ -12,7 +12,7 @@
 - name: Deploy all analytics services to a single node
   hosts: all
   become: True
-  gather_facts: True
+  gather_facts: false
   vars:
     migrate_db: "yes"
     disable_edx_services: false
