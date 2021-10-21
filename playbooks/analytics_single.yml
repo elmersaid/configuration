@@ -12,7 +12,8 @@
 - name: Deploy all analytics services to a single node
   hosts: all
   become: True
-  gather_facts: false
+  gather_facts: True
+  
   vars:
     migrate_db: "yes"
     disable_edx_services: false
@@ -24,6 +25,8 @@
     EDXAPP_MYSQL_HOST: ''
     EDXAPP_MEMCACHE: ''
     POSTFIX_QUEUE_EXTERNAL_SMTP_HOST: ''
+    AWS_GATHER_FACTS: false
+    COMMON_ENABLE_AWS_ROLE: false
   roles:
     - role: aws
       when: false
