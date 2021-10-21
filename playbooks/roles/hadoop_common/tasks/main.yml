@@ -188,14 +188,6 @@
     chdir: "{{ hadoop_common_temporary_dir }}"
   when: not native_libs_built.stat.exists
 
-- name: native lib built
-  shell: "mvn package -X -Pnative -DskipTests"
-  args:
-    chdir: "{{ hadoop_common_temporary_dir }}/hadoop-{{ HADOOP_COMMON_VERSION }}-src/hadoop-common-project"
-  environment:
-    LD_LIBRARY_PATH: /usr/local/lib
-  when: not native_libs_built.stat.exists
-
 - name: old native libs renamed
   shell: "mv {{ HADOOP_COMMON_HOME }}/lib/native/{{ item.name }} {{ HADOOP_COMMON_HOME }}/lib/native/{{ item.new_name }}"
   with_items:
